@@ -28,11 +28,11 @@ const USE_GOOGLE_ANALYTICS = false;
 const GOOGLE_ANALYTICS_TRACKING_ID = '';
 
 // styling: set to `true` if you want dash-line route
-const USE_DASH_LINE = true;
+const USE_DASH_LINE = false;
 // styling: route line opacity: [0, 1]
-const LINE_OPACITY = 0.4;
+const LINE_OPACITY = 0.6;
 // styling: map height
-const MAP_HEIGHT = 600;
+const MAP_HEIGHT = 400;
 //set to `false` if you want to hide the road label characters
 const ROAD_LABEL_DISPLAY = true;
 //set to `true` if you want to display only the routes without showing the map.
@@ -41,8 +41,8 @@ const PRIVACY_MODE = false;
 const LIGHTS_ON = true;
 
 // IF you outside China please make sure IS_CHINESE = false
-const IS_CHINESE = true;
-const USE_ANIMATION_FOR_GRID = false;
+const IS_CHINESE = false;
+const USE_ANIMATION_FOR_GRID = true;
 const CHINESE_INFO_MESSAGE = (yearLength: number, year: string): string => {
   const yearStr = year === 'Total' ? '所有' : ` ${year} `;
   return `我用 App 记录自己跑步 ${yearLength} 年了，下面列表展示的是${yearStr}的数据`;
