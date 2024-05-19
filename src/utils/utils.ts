@@ -25,6 +25,45 @@ export interface Activity {
   streak: number;
 }
 
+const convertLocation = (run: Activity): string => {
+  const result = run.location_country?.split(',');
+  let location = '';
+  if (result?.length > 0) {
+    location = `${result[result?.length - 5]}, ${result[result?.length - 4]}`;
+  }
+  return location;
+};
+
+const convertDateBahasa = (run: Activity): string => {
+  const monthsIndo = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'Mei',
+    'Jun',
+    'Jul',
+    'Agu',
+    'Sep',
+    'Okt',
+    'Nov',
+    'Des',
+  ];
+
+  const date = new Date(run.start_date_local);
+
+  const day = date.getDate();
+  const month = date.getMonth(); // getMonth() returns 0-11
+  const year = date.getFullYear();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
+
+  const formattedDate = `${day} ${monthsIndo[month]} ${year}`;
+
+  return formattedDate;
+};
+
 const titleForShow = (run: Activity): string => {
   const date = run.start_date_local.slice(0, 11);
   const distance = (run.distance / 1000.0).toFixed(2);
@@ -298,4 +337,6 @@ export {
   getBoundsForGeoData,
   formatRunTime,
   convertMovingTime2Sec,
+  convertLocation,
+  convertDateBahasa,
 };

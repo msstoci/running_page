@@ -1,4 +1,4 @@
-import { formatPace, titleForRun, formatRunTime, Activity, RunIds } from '@/utils/utils';
+import { formatPace, titleForRun, formatRunTime, Activity, RunIds, convertLocation, convertDateBahasa } from '@/utils/utils';
 import styles from './style.module.scss';
 
 interface IRunRowProperties {
@@ -31,11 +31,12 @@ const RunRow = ({ elementIndex, locateActivity, run, runIndex, setRunIndex }: IR
       onClick={handleClick}
     >
       <td>{run.name}</td>
+      <td>{convertLocation(run)}</td>
       <td>{distance}</td>
       {paceParts && <td>{paceParts}</td>}
       {/* <td>{heartRate && heartRate.toFixed(0)}</td> */}
       <td>{runTime}</td>
-      <td className={styles.runDate}>{run.start_date_local}</td>
+      <td className={styles.runDate}>{convertDateBahasa(run)}</td>
     </tr>
   );
 };

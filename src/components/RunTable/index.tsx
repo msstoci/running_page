@@ -49,6 +49,7 @@ const RunTable = ({
   const sortDateFuncClick =
     sortFuncInfo === 'Date' ? sortDateFunc : sortDateFuncReverse;
   const sortFuncMap = new Map([
+    ['Location', sortKMFunc],
     ['KM', sortKMFunc],
     ['Pace', sortPaceFunc],
     // ['BPM', sortBPMFunc],
